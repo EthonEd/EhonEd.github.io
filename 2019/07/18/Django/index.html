@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>Django | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Tutorials1，创建项目 If this is your first time using Django, you’ll have to take care of some initial setup. Namely, you’ll need to auto-generate some code that establishes a Django project – a collection">
+<meta name="keywords" content="python">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Django">
+<meta property="og:url" content="http://yoursite.com/2019/07/18/Django/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="Tutorials1，创建项目 If this is your first time using Django, you’ll have to take care of some initial setup. Namely, you’ll need to auto-generate some code that establishes a Django project – a collection">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-07-18T07:43:01.251Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Django">
+<meta name="twitter:description" content="Tutorials1，创建项目 If this is your first time using Django, you’ll have to take care of some initial setup. Namely, you’ll need to auto-generate some code that establishes a Django project – a collection">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-Django" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/07/18/Django/" class="article-date">
+  <time datetime="2019-07-18T07:32:55.000Z" itemprop="datePublished">2019-07-18</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Django
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Tutorials"><a href="#Tutorials" class="headerlink" title="Tutorials"></a>Tutorials</h2><h3 id="1，创建项目"><a href="#1，创建项目" class="headerlink" title="1，创建项目"></a>1，创建项目</h3><blockquote>
+<p>If this is your first time using Django, you’ll have to take care of some initial setup. Namely, you’ll need to auto-generate some code that establishes a Django <a href="https://docs.djangoproject.com/en/2.2/glossary/#term-project" target="_blank" rel="noopener">project</a> – a collection of settings for an instance of Django, including database configuration, Django-specific options and application-specific settings.</p>
+<p>新建一个目录或找一个已存在的目录用于存放你的项目</p>
+<p>From the command line, <code>cd</code> into a directory where you’d like to store your code, then run the following command:</p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> django-admin startproject mysite</span><br></pre></td></tr></table></figure>
+
+<p>目录结构如下</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">mysite/</span><br><span class="line">    manage.py</span><br><span class="line">    mysite/</span><br><span class="line">        __init__.py</span><br><span class="line">        settings.py</span><br><span class="line">        urls.py</span><br><span class="line">        wsgi.py</span><br></pre></td></tr></table></figure>
+
+<p>各个文件说明</p>
+<blockquote>
+<ul>
+<li>The outer <code>mysite/</code> root directory is just a container for your project. Its name doesn’t matter to Django; you can rename it to anything you like.  可以随时重命名这个文件夹</li>
+<li><code>manage.py</code>: A command-line utility that lets you interact with this Django project in various ways. You can read all the details about <code>manage.py</code> in <a href="https://docs.djangoproject.com/en/2.2/ref/django-admin/" target="_blank" rel="noopener">django-admin and manage.py</a>.</li>
+<li>The inner <code>mysite/</code> directory is the actual Python package for your project. Its name is the Python package name you’ll need to use to import anything inside it (e.g. <code>mysite.urls</code>).</li>
+<li><code>mysite/__init__.py</code>: An empty file that tells Python that this directory should be considered a Python package. If you’re a Python beginner, read <a href="https://docs.python.org/3/tutorial/modules.html#tut-packages" target="_blank" rel="noopener">more about packages</a> in the official Python docs.</li>
+<li><code>mysite/settings.py</code>: Settings/configuration for this Django project. <a href="https://docs.djangoproject.com/en/2.2/topics/settings/" target="_blank" rel="noopener">Django settings</a> will tell you all about how settings work.</li>
+<li><code>mysite/urls.py</code>: The URL declarations for this Django project; a “table of contents” of your Django-powered site. You can read more about URLs in <a href="https://docs.djangoproject.com/en/2.2/topics/http/urls/" target="_blank" rel="noopener">URL dispatcher</a>.</li>
+<li><code>mysite/wsgi.py</code>: An entry-point for WSGI-compatible web servers to serve your project. See <a href="https://docs.djangoproject.com/en/2.2/howto/deployment/wsgi/" target="_blank" rel="noopener">How to deploy with WSGI</a> for more details.</li>
+</ul>
+</blockquote>
+<h3 id="2，用于开发的简易服务器"><a href="#2，用于开发的简易服务器" class="headerlink" title="2，用于开发的简易服务器"></a>2，用于开发的简易服务器</h3><blockquote>
+<p>Let’s verify your Django project works. Change into the outer <code>mysite</code> directory, if you haven’t already, and run the following commands:</p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> python manage.py runserver</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>==注意点==：Django只是个网络框架，不是网络服务器，真正的服务器类似于Apache</p>
+<p>You’ve started the Django development server, a lightweight Web server written purely in Python. We’ve included this with Django so you can develop things rapidly, without having to deal with configuring a production server – such as Apache – until you’re ready for production.</p>
+<p>Now’s a good time to note: <strong>don’t</strong> use this server in anything resembling a production environment. It’s intended only for use while developing. (We’re in the business of making Web frameworks, not Web servers.)</p>
+</blockquote>
+<p>改变端口方法：</p>
+<blockquote>
+<p>By default, the <a href="https://docs.djangoproject.com/en/2.2/ref/django-admin/#django-admin-runserver" target="_blank" rel="noopener"><code>runserver</code></a> command starts the development server on the internal IP at port 8000.</p>
+<p>If you want to change the server’s port, pass it as a command-line argument. For instance, this command starts the server on port 8080:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; $ python manage.py runserver 8080</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<blockquote>
+<p>If you want to change the server’s IP, pass it along with the port. For example, to listen on all available public IPs (which is useful if you are running Vagrant or want to show off your work on other computers on the network), use:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; $ python manage.py runserver 0:8000</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<blockquote>
+<p><strong>0</strong> is a shortcut for <strong>0.0.0.0</strong>. Full docs for the development server can be found in the <a href="https://docs.djangoproject.com/en/2.2/ref/django-admin/#django-admin-runserver" target="_blank" rel="noopener"><code>runserver</code></a>reference.</p>
+</blockquote>
+<p>提示：自动加载运行服务，代码改变时不需要重启服务，和java不一样</p>
+<blockquote>
+<p>Automatic reloading of <a href="https://docs.djangoproject.com/en/2.2/ref/django-admin/#django-admin-runserver" target="_blank" rel="noopener"><code>runserver</code></a></p>
+<p>The development server automatically reloads Python code for each request as needed. You don’t need to restart the server for code changes to take effect. However, some actions like adding files don’t trigger a restart, so you’ll have to restart the server in these cases.</p>
+</blockquote>
+<h3 id="3，创建应用"><a href="#3，创建应用" class="headerlink" title="3，创建应用"></a>3，创建应用</h3><p>提示：</p>
+<blockquote>
+<p>Projects vs. apps</p>
+<p>What’s the difference between a project and an app? An app is a Web application that does something – e.g., a Weblog system, a database of public records or a simple poll app. A project is a collection of configuration and apps for a particular website. A project can contain multiple apps. An app can be in multiple projects.</p>
+</blockquote>
+<blockquote>
+<p>Your apps can live anywhere on your <a href="https://docs.python.org/3/tutorial/modules.html#tut-searchpath" target="_blank" rel="noopener">Python path</a>. In this tutorial, we’ll create our poll app right next to your <code>manage.py</code> file so that it can be imported as its own top-level module, rather than a submodule of <code>mysite</code>.</p>
+<p>To create your app, make sure you’re in the same directory as <code>manage.py</code> and type this command:</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ python manage.py startapp polls</span><br></pre></td></tr></table></figure>
+
+<p>目录结构</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">polls/</span><br><span class="line">    __init__.py</span><br><span class="line">    admin.py</span><br><span class="line">    apps.py</span><br><span class="line">    migrations/</span><br><span class="line">        __init__.py</span><br><span class="line">    models.py</span><br><span class="line">    tests.py</span><br><span class="line">    views.py</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/07/18/Django/" data-id="cjy8db1hq0000twhdtt31m64n" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2019/07/18/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Hello World</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/python/" style="font-size: 10px;">python</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">July 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/07/18/Django/">Django</a>
+          </li>
+        
+          <li>
+            <a href="/2019/07/18/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
